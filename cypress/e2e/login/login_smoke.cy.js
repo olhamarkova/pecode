@@ -1,8 +1,7 @@
 /// <reference types="cypress"/>
 
 import { LoginPage } from "../../pages/LoginPage.js";
-import { urls } from "../../data/urls.js";
-import { pageData } from "../../data/pageData.js";
+import { urls, pageData } from "../../support/services/data_service.js";
 
 const loginPage = new LoginPage();
 

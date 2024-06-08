@@ -1,7 +1,6 @@
 /// <reference types="cypress"/>
 
-import { colors } from "../data/colors";
-import { pageData } from "../data/pageData";
+import { colors, pageData } from "../support/services/data_service.js";
 
 export class LoginPage {
   elements = {
@@ -15,7 +14,7 @@ export class LoginPage {
   };
 
   submitLoginForm() {
-    this.submitLoginForm().click();
+    this.elements.submitButton().click();
   }
 
   fillInputField(inputNameAttribute, data) {
