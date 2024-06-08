@@ -1,7 +1,11 @@
 /// <reference types="cypress"/>
 
 import { LoginPage } from "../../pages/LoginPage.js";
-import { urls, pageData, errors } from "../../support/services/data_service.js";
+import {
+  urls,
+  errors,
+  invalidCredentials,
+} from "../../support/services/data_service.js";
 
 const loginPage = new LoginPage();
 
@@ -18,5 +22,12 @@ describe("Login Form Spec - Negative", function () {
     loginPage.validateErrorMessages(errors.noPassword, 2);
   });
 
-  it("User Shall See The Error Message When Uses Invalid Credentials", () => {});
+  it("User Shall See The Error Message When Uses Invalid Credentials", () => {
+    loginPage.fillInputField("username", invalidCredentials.username);
+    loginPage.validateInputValue("username", invalidCredentials.username);
+    loginPage.fillInputField("password", invalidCredentials.password);
+    loginPage.validateInputValue("password", invalidCredentials.password);
+    loginPage.submitLoginForm();
+    loginPage.validateErrorMessages(errors.invalidPassword, 2);
+  });
 });
