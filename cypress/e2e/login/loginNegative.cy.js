@@ -8,6 +8,7 @@ import {
 } from "../../support/services/dataService.js";
 
 const loginPage = new LoginPage();
+const username = Cypress.env("email");
 
 describe("Login Form Spec - Negative", function () {
   beforeEach(() => {
@@ -29,5 +30,14 @@ describe("Login Form Spec - Negative", function () {
     loginPage.validateInputValue("password", invalidCredentials.password);
     loginPage.submitLoginForm();
     loginPage.validateErrorMessages(errors.invalidPassword, 2);
+  });
+
+  it("User Shall See The Error Message If There Is No Account Registered", () => {
+    loginPage.fillInputField("username", username);
+    loginPage.validateInputValue("username", username);
+    loginPage.fillInputField("password", invalidCredentials.password);
+    loginPage.validateInputValue("password", invalidCredentials.password);
+    loginPage.submitLoginForm();
+    loginPage.validateErrorMessages(errors.noAccountFound, 1);
   });
 });

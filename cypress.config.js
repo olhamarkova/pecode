@@ -15,6 +15,7 @@ module.exports = defineConfig({
     url: `${process.env.URL}`,
     username: `${process.env.LOGIN}`,
     password: `${process.env.PASSWORD}`,
+    email: `${process.env.EMAIL}`,
   },
   viewportWidth: 1920,
   viewportHeight: 1080,

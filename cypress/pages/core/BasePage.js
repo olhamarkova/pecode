@@ -1,4 +1,4 @@
-export default class BasePage {
+export class BasePage {
   constructor() {
     this.heading = () => cy.get("h1");
   }
