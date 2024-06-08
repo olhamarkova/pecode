@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
-import { BasePage } from "./core/BasePage.js";
-import { colors, pageData } from "../support/services/data_service.js";
+import BasePage from "./core/BasePage.js";
+import { colors, pageData } from "../support/services/dataService.js";
 
 export class LoginPage extends BasePage {
   constructor() {
@@ -13,22 +13,15 @@ export class LoginPage extends BasePage {
     this.submitButton = () => cy.get("input[type='submit']");
     this.errorMessage = (index) => cy.get("span.help-block").eq(index - 1); //for UI consistency
   }
-  // elements = {
-  //   loginFormBlock: () => cy.get("div.wrapper"),
-  //   logo: () => cy.get("#logomini"),
-  //   heading: () => cy.get("h1"),
-  //   loginFormInput: (inputNameAttribute) =>
-  //     cy.get(`input[name="${inputNameAttribute}"]`), //username, password
-  //   submitButton: () => cy.get("input[type='submit']"),
-  //   errorMessage: (index) => cy.get("span.help-block").eq(index - 1), //for UI consistency
-  // };
 
-  submitLoginForm() {
-    this.submitButton().click();
-  }
+  //actions
 
   fillInputField(inputNameAttribute, data) {
     this.loginFormInput(inputNameAttribute).type(data);
+  }
+
+  submitLoginForm() {
+    this.submitButton().click();
   }
 
   //validations

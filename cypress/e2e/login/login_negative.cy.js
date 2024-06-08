@@ -5,7 +5,7 @@ import {
   urls,
   errors,
   invalidCredentials,
-} from "../../support/services/data_service.js";
+} from "../../support/services/dataService.js";
 
 const loginPage = new LoginPage();
 

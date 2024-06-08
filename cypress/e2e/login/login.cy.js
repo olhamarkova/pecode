@@ -1,7 +1,7 @@
 /// <reference types="cypress"/>
 
 import { LoginPage } from "../../pages/LoginPage.js";
-import { urls } from "../../support/services/data_service.js";
+import { urls } from "../../support/services/dataService.js";
 
 const loginPage = new LoginPage();
 const username = Cypress.env("username");

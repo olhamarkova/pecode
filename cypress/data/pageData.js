@@ -1,4 +1,4 @@
-export const pageData = {
+export const loginPageData = {
   heading: "AQA internship Login",
   submitButton: "Login",
   placeholder: {
