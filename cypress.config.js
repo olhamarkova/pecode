@@ -9,6 +9,7 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
+    ignoreVideos: true,
   },
   env: {
     url: `${process.env.URL}`,
@@ -17,7 +18,7 @@ module.exports = defineConfig({
   },
   viewportWidth: 1920,
   viewportHeight: 1080,
-  //video: true,
+  video: true,
   screenshotOnRunFailure: true,
   e2e: {
     setupNodeEvents(on, config) {
