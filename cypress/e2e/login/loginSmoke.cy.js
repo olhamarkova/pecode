@@ -11,6 +11,7 @@ describe("Login Form Spec - Smoke", function () {
   });
 
   it("User Shall See The Login Form", () => {
+    loginPage.validateTitle(pageData.title);
     loginPage.validateLoginForm();
     loginPage.validateLogo();
     loginPage.validateHeading(pageData.heading);

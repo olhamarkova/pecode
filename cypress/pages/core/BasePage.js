@@ -6,4 +6,8 @@ export class BasePage {
   validateHeading(text) {
     this.heading().should("be.visible").and("have.text", text);
   }
+
+  validateTitle(title) {
+    cy.title().should("eq", title);
+  }
 }
